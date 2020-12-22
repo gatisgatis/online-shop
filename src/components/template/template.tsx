@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import './template.css';
+import './template.module.scss';
 
 type Props = {
   text: string;
