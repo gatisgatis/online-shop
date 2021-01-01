@@ -1,3 +1,2 @@
-Strukturēts un ar biežāk lietotajiem dependencies. 
-
-Install npm un go
+First React Redux Project.
+Work in progress
