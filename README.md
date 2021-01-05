@@ -1,2 +1,3 @@
-First React Redux Project.
-Work in progress
+E-Shop project.
+React, TS, Redux..
+# Work in progress
