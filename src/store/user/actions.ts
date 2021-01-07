@@ -1,11 +1,11 @@
-import { User, USER_LOG_IN, UserActions, USER_LOG_OUT, CHANGE_USER_INFO } from './types';
+import { User } from '../../types/user';
+import { UserActions, USER_LOG_IN, USER_LOG_OUT, CHANGE_USER_INFO } from './types';
 
-export const userLogIn = (name: string, password: string): UserActions => {
+export const userLogIn = (user: User): UserActions => {
   return {
     type: USER_LOG_IN,
     payload: {
-      name,
-      password,
+      user,
     },
   };
 };
@@ -16,9 +16,11 @@ export const userLogOut = (): UserActions => {
   };
 };
 
-export const changeUserInfo = (user: User): UserActions => {
+export const changeUserInfo = (key: string): UserActions => {
   return {
     type: CHANGE_USER_INFO,
-    payload: user,
+    payload: {
+      key,
+    },
   };
 };

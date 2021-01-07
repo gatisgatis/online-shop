@@ -1,0 +1,51 @@
+$primary: white;
+$primaryBG: blue;
+$secondary: red;
+$secondaryBG: black;
+$special: green;
+$specialBG: yellow;
+$extraBG: gold;
+$extra: black;
+
+.button {
+  background-color: $primaryBG;
+  color: $primary;
+  padding: 10px 25px;
+  border: none;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  font-weight: bold;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.small {
+  padding: 5px 10px;
+}
+
+.large {
+  padding: 15px 40px;
+}
+
+.extra-large {
+  padding: 30px 60px;
+}
+
+.secondary {
+  background-color: $secondaryBG;
+  color: $secondary;
+}
+
+.special {
+  background-color: $specialBG;
+  color: $special;
+}
+
+.extra {
+  background-color: $extraBG;
+  color: $extra;
+}

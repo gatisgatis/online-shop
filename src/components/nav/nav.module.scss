@@ -1,0 +1,14 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navItem {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-grow: 1;
+    &:hover{
+        background-color: rgb(238, 238, 238);
+    }
+}

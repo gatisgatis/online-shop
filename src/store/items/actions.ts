@@ -1,32 +1,18 @@
-import {
-  Item,
-  SELECT_ITEM,
-  CHANGE_ITEM_COUNT,
-  ADD_ITEM,
-  DELETE_ITEM,
-  EDIT_ITEM,
-  ItemActions,
-} from './types';
+import { CHANGE_ITEM_COUNT, ADD_ITEMS, DELETE_ITEMS, EDIT_ITEM, ItemActions } from './types';
+import { Item } from '../../types/item';
 
-export const selectItem = (id: string): ItemActions => {
-  return {
-    type: SELECT_ITEM,
-    id,
-  };
-};
-
-export const changeItemCount = (idd: string, countSelecteddas: number): ItemActions => {
+export const changeItemCount = (id: string, countSelected: number): ItemActions => {
   return {
     type: CHANGE_ITEM_COUNT,
-    id: idd,
-    countSelected: countSelecteddas,
+    id,
+    countSelected,
   };
 };
 
-export const addItem = (item: Item): ItemActions => {
+export const addItems = (items: Item[]): ItemActions => {
   return {
-    type: ADD_ITEM,
-    item,
+    type: ADD_ITEMS,
+    items,
   };
 };
 
@@ -37,9 +23,9 @@ export const editItem = (item: Item): ItemActions => {
   };
 };
 
-export const deleteItem = (id: string): ItemActions => {
+export const deleteItems = (ids: string[]): ItemActions => {
   return {
-    type: DELETE_ITEM,
-    id,
+    type: DELETE_ITEMS,
+    ids,
   };
 };

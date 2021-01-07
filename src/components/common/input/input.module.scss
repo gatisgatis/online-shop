@@ -1,0 +1,35 @@
+.input {
+  position: relative;
+  width: 100%;
+  padding: 6px 20px;
+  border: 1px solid $primary;
+  outline-color: $apricot;
+  outline-width: thick;
+}
+
+.small {
+    padding: 5px 10px;
+  }
+  
+  .large {
+    padding: 15px 40px;
+  }
+  
+  .extra-large {
+    padding: 30px 60px;
+  }
+  
+  .secondary {
+    background-color: $secondaryBG;
+    color: $secondary;
+  }
+  
+  .special {
+    background-color: $specialBG;
+    color: $special;
+  }
+  
+  .extra {
+    background-color: $extraBG;
+    color: $extra;
+  }

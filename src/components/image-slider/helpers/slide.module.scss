@@ -1,0 +1,17 @@
+.slide {
+  position: relative;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.text {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  padding: 10px;
+  font-size: 3rem;
+  text-align: center;
+}

@@ -1,0 +1,102 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(212, 212, 212);
+  transition: transform 0.2s, box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0px 0px 20px 5px rgb(182, 182, 182);
+  }
+}
+
+.soldOut {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  right: 5px;
+  top: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.imgWrapper {
+  position: relative;
+  padding-top: 100%;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: contain;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.2s;
+  &:hover {
+    color: rgba(0,0,0,0.6);
+  }
+}
+
+.prices {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.fullPrice {
+  font-size: 1.1rem;
+  text-decoration: line-through;
+  color: grey;
+}
+
+.discountPrice {
+  font-weight: bold;
+}
+
+.btnWrapper {
+  margin-bottom: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.reviews {
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+  &:hover {
+    color: rgb(95, 95, 95);
+  }
+}
+
+.readMore {
+  @extend .reviews
+}
+
+.modal {
+  max-width: 800px;
+  height: 500px;
+}

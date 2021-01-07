@@ -1,54 +1,29 @@
-export const SELECT_ITEM = 'SELECT_ITEM';
+import { Item } from '../../types/item';
+
 export const CHANGE_ITEM_COUNT = 'CHANGE_ITEM_COUNT';
-export const DELETE_ITEM = 'DELETE_ITEM';
+export const DELETE_ITEMS = 'DELETE_ITEMS';
 export const EDIT_ITEM = 'EDIT_ITEM';
-export const ADD_ITEM = 'ADD_ITEM';
-
-export interface Item {
-  id: string;
-  name: string;
-  price: number;
-  isSelected: boolean;
-  countAvailable: number;
-  countSelected: number;
-  specs: {
-    color: string;
-    weight: number;
-    volume: number;
-  };
-  discount: number;
-  images: string[];
-}
-
-interface SelectItemAction {
-  type: string;
-  id: string;
-}
+export const ADD_ITEMS = 'ADD_ITEMS';
 
 interface ChangeCountAction {
-  type: string;
+  type: typeof CHANGE_ITEM_COUNT;
   id: string;
   countSelected: number;
 }
 
-interface AddItemAction {
-  type: string;
-  item: Item;
+interface AddItemsAction {
+  type: typeof ADD_ITEMS;
+  items: Item[];
 }
 
 interface EditItemAction {
-  type: string;
+  type: typeof EDIT_ITEM;
   item: Item;
 }
 
-interface DeleteItemAction {
-  type: string;
-  id: string;
+interface DeleteItemsAction {
+  type: typeof DELETE_ITEMS;
+  ids: string[];
 }
 
-export type ItemActions =
-  | SelectItemAction
-  | ChangeCountAction
-  | AddItemAction
-  | EditItemAction
-  | DeleteItemAction;
+export type ItemActions = ChangeCountAction | AddItemsAction | EditItemAction | DeleteItemsAction;

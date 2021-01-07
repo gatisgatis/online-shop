@@ -1,37 +1,25 @@
-import { User, USER_LOG_IN, UserActions, USER_LOG_OUT, CHANGE_USER_INFO } from './types';
+import { v4 } from 'uuid';
+import { UserActions, USER_LOG_IN, USER_LOG_OUT, CHANGE_USER_INFO } from './types';
+import { User } from '../../types/user';
+import { USERS } from '../../data/users';
 
 const defaultUser: User = {
-  id: '1',
+  id: v4(),
   name: 'Guest',
   password: '',
   createdAt: Date.now(),
   birthDate: Date.now(),
   status: 'guest',
   money: 0,
-  image: '',
-};
-
-export const getUsersFromDataBase = () => {
-  const userString = localStorage.getItem('users');
-  let users: User[] = [];
-  if (userString) {
-    users = JSON.parse(userString);
-  }
-  return users;
+  image: 'https://i1.sndcdn.com/avatars-000324217627-ffdyh1-t500x500.jpg',
+  email: '',
+  userName: '',
 };
 
 export const userReducer = (state = defaultUser, action: UserActions) => {
   switch (action.type) {
     case USER_LOG_IN: {
-      const users = getUsersFromDataBase();
-      const userLoggedIn = users.find((user) => {
-        // @ts-ignore
-        return user.name === action.payload.name && user.password === action.payload.password;
-      });
-      if (!userLoggedIn) {
-        return state;
-      }
-      return userLoggedIn;
+      return action.payload.user;
     }
     case USER_LOG_OUT: {
       return defaultUser;
