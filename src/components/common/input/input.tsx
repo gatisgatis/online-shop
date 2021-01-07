@@ -3,7 +3,7 @@ import style from './input.module.scss';
 
 type Props = {
   value: string;
-  onChangeHandler: (value: string) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: 'text' | 'email' | 'password' | 'search';
   size?: 'large' | 'small' | 'normal' | 'extraLarge';
   color?: 'primary' | 'secondary' | 'special' | 'extra';
@@ -16,7 +16,7 @@ type Props = {
 
 const Input: FC<Props> = ({
   value,
-  onChangeHandler,
+  onChange,
   placeholder = '',
   id,
   required = false,
@@ -35,10 +35,10 @@ const Input: FC<Props> = ({
 
   return (
     <input
-      className={`${style.input} ${style.size} ${style.color}`}
+      className={`${style.input} ${style[size]} ${style[color]}`}
       list={list}
       type={type}
-      onChange={(e) => onChangeHandler(e.target.value)}
+      onChange={(e) => onChange(e)}
       placeholder={placeholder}
       value={value}
       id={id}

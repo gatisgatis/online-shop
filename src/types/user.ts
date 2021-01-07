@@ -7,7 +7,7 @@ export interface User {
   birthDate: number;
   createdAt: number;
   status: UserStatus;
-  money: number;
+  bonusMoney: number;
   image: string;
 }
 

@@ -9,6 +9,8 @@ import Catalog from './pages/catalog';
 import ItemPage from './pages/item';
 import UserPage from './pages/user';
 import { Header } from './components/header/header';
+import Register from './pages/register';
+import LogIn from './pages/log-in';
 
 const App: FC = () => {
   return (
@@ -23,6 +25,12 @@ const App: FC = () => {
         </Route>
         <Route path="/contacts">
           <Contacts />
+        </Route>
+        <Route path="/log-in">
+          <LogIn />
+        </Route>
+        <Route path="/register">
+          <Register />
         </Route>
         <Route path="/catalog">
           <Catalog />

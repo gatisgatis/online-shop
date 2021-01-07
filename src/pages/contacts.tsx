@@ -1,6 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import Input from '../components/common/input/input';
 
 const Contacts: FC = () => {
+  const [inputField, setInputField] = useState('');
+
   return (
     <section>
       <div className="container">

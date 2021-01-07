@@ -1,31 +1,41 @@
 import React, { FC } from 'react';
-import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import useTextInput from '../../hooks/useTextInput';
 import { userLogIn } from '../../store/user/actions';
+import { Button } from '../common/button/button';
+import Input from '../common/input/input';
 
 export const LogInForm: FC = () => {
-  const { register, handleSubmit, errors, watch } = useForm();
+  const [username, bindUsername, resetUsername] = useTextInput('');
+  const [password, bindPassword, resetPassword] = useTextInput('');
 
   const dispatch = useDispatch();
 
-  interface LogInData {
-    username: string;
-    password: string;
-  }
-
-  const onSubmitHandler = (data: LogInData) => {
-    // dispatch(userLogIn());
-    console.log('USERRRR');
+  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // aizsūtam datus uz serveri un sagaidām atbildi
+    // šajā gadījumā paņemam no localStorage visus userus, atrodam match un ja ir, tad logIn
+    
   };
 
   return (
-    <div>
-      FORMA
-      <form onSubmit={handleSubmit(onSubmitHandler)}>
-        <input type="text" placeholder="Username" name="username" ref={register} />
-        <input type="text" placeholder="Password" name="password" ref={register} />
-        <input type="submit" />
-      </form>
-    </div>
+    <section>
+      <div className="container">
+        <div className="row center-xs">
+          <div className="col-xs-12 col-md-4">
+            <h1>Log In</h1>
+            <form onSubmit={submitHandler}>
+              <h5>Lietotājvārds</h5>
+              <Input type="text" {...bindUsername} placeholder="Lietotājvārds" />
+              <h5>Parole</h5>
+              <Input type="password" {...bindPassword} placeholder="Parole" />
+              <br />
+              <br />
+              <Button>Ielogoties</Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };

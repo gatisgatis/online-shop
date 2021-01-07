@@ -7,7 +7,7 @@ import { DropdownFilter } from '../components/dropdown-filter/dropdown-filter';
 import { CheckBoxes } from '../components/check-boxes/check-boxes';
 import { Search } from '../components/search/search';
 import { RootState } from '../store';
-import { SLIDES_IMAGES } from '../data/slides_images';
+import { FANCY_TITLES, SLIDES_IMAGES } from '../data/slides_images';
 import {
   sorts,
   CHEAPEST,
@@ -110,7 +110,12 @@ const Catalog: FC = () => {
     <>
       <section className="margin-bottom--20">
         <div style={{ paddingTop: '30%', position: 'relative' }}>
-          <ImageSlider images={SLIDES_IMAGES} />
+          <ImageSlider
+            images={SLIDES_IMAGES}
+            textTitles={FANCY_TITLES}
+            textTexts={FANCY_TITLES}
+            showText={true}
+          />
         </div>
       </section>
       <section>

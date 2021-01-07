@@ -1,15 +1,8 @@
-$primary: white;
-$primaryBG: blue;
-$secondary: red;
-$secondaryBG: black;
-$special: green;
-$specialBG: yellow;
-$extraBG: gold;
-$extra: black;
+@import '../../../styles/variables.scss';
 
 .button {
-  background-color: $primaryBG;
-  color: $primary;
+  background-color: $primary-dark;
+  color: $primary-light;
   padding: 10px 25px;
   border: none;
   transition: opacity 0.2s;
@@ -36,16 +29,16 @@ $extra: black;
 }
 
 .secondary {
-  background-color: $secondaryBG;
-  color: $secondary;
+  background-color: $secondary-dark;
+  color: $secondary-light;
 }
 
 .special {
-  background-color: $specialBG;
-  color: $special;
+  background-color: $special-light;
+  color: $special-dark;
 }
 
 .extra {
-  background-color: $extraBG;
-  color: $extra;
+  background-color: $extra-dark;
+  color: $extra-light;
 }

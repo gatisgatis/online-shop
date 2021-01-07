@@ -1,7 +1,6 @@
 import { v4 } from 'uuid';
 import { UserActions, USER_LOG_IN, USER_LOG_OUT, CHANGE_USER_INFO } from './types';
 import { User } from '../../types/user';
-import { USERS } from '../../data/users';
 
 const defaultUser: User = {
   id: v4(),
@@ -10,7 +9,7 @@ const defaultUser: User = {
   createdAt: Date.now(),
   birthDate: Date.now(),
   status: 'guest',
-  money: 0,
+  bonusMoney: 0,
   image: 'https://i1.sndcdn.com/avatars-000324217627-ffdyh1-t500x500.jpg',
   email: '',
   userName: '',

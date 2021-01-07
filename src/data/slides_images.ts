@@ -5,3 +5,9 @@ export const SLIDES_IMAGES: string[] = [
   'https://html5box.com/html5gallery/images/Swan_1024.jpg',
 ];
 
+export const FANCY_TITLES: string[] = [
+  'TE IR KAUT KAS LABS',
+  'ELINA NEKO NESAPROT',
+  'KO TAGAD DARIT TE',
+  'KAPEC TE IR TAS',
+];

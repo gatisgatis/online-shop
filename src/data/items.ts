@@ -41,7 +41,7 @@ export const allItems: Item[] = [
   },
   {
     id: uuid(),
-    name: 'Atpūtas krēsls ĒRTAIS',
+    name: 'Atpūtas krēsls ĒRTAIS Jaukums',
     price: 60,
     countAvailable: 20,
     countSelected: 0,
