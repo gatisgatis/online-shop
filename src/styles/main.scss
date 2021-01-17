@@ -4,15 +4,55 @@
   padding: 0;
 }
 
-// .ReactModal__Overlay {
-//   opacity: 0;
-//   transition: transform 200ms;
-// }
+body {
+  background-color: rgb(235, 235, 235);
+}
 
-// .ReactModal__Overlay--after-open{
-//   transform: scale(1);
-// }
+.fancyShit {
+  background-color: green;
+  background-image: url('https://c.files.bbci.co.uk/12A9B/production/_111434467_gettyimages-1143489763.jpg');
+  width: 500px;
+  height: 500px;
+  background-blend-mode: darken;
+  clip-path: polygon(59% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 71%);
+  mask-image: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(177, 161, 161, 0.158) 50%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  animation: fancy 8s ease-out infinite;
+}
 
-// .ReactModal__Overlay--before-close{
-//   transform: scale(1);
-// }
+@keyframes fancy {
+  0% {
+    background-color: rgb(131, 255, 131);
+  }
+  25% {
+    background-color: rgb(212, 72, 240);
+  }
+  50% {
+    background-color: rgb(134, 134, 255);
+  }
+  75% {
+    background-color: rgb(212, 72, 240);
+  }
+  100% {
+    background-color: rgb(131, 255, 131);
+  }
+}
+
+.sticky-btn {
+  top: 0;
+  position: sticky;
+  position: -webkit-sticky;
+}
+
+.cat2 {
+  width: 400px;
+  filter: blur(5px);
+  transition: filter 2s;
+  &:hover {
+    filter: blur(0);
+  }
+}

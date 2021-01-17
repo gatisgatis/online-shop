@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid rgb(212, 212, 212);
+  background-color: white;
   transition: transform 0.2s, box-shadow 0.2s;
   &:hover {
     box-shadow: 0px 0px 20px 5px rgb(182, 182, 182);
@@ -29,7 +30,6 @@
   padding-top: 100%;
   width: 100%;
   overflow: hidden;
-  cursor: pointer;
   margin-bottom: 5px;
 }
 
@@ -54,7 +54,7 @@
   cursor: pointer;
   transition: color 0.2s;
   &:hover {
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.8);
   }
 }
 

@@ -5,8 +5,8 @@ interface Props {
   image: string;
   showText: boolean;
   textColor: 'dark' | 'light';
-  textTitle: string;
-  textText: string;
+  textBigger: string;
+  textSmaller: string;
   width: number;
   imageFitCover: boolean;
 }
@@ -15,12 +15,11 @@ const Slide: FC<Props> = ({
   image,
   showText,
   textColor,
-  textText,
+  textSmaller,
   imageFitCover,
-  textTitle,
+  textBigger,
   width,
 }) => {
-  console.log(image);
   return (
     <div
       className={style.slide}
@@ -38,8 +37,8 @@ const Slide: FC<Props> = ({
             color: textColor === 'light' ? 'white' : 'black',
           }}
         >
-          <h1>{textTitle}</h1>
-          <h3>{textText}</h3>
+          <h1>{textBigger}</h1>
+          <h3>{textSmaller}</h3>
         </div>
       )}
     </div>
@@ -47,3 +46,4 @@ const Slide: FC<Props> = ({
 };
 
 export default memo(Slide);
+// export default Slide;

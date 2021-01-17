@@ -1,12 +1,11 @@
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { FC, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Modal from 'react-modal';
+import { useDispatch } from 'react-redux';
 import { HiThumbUp } from 'react-icons/hi';
 import { useHistory } from 'react-router-dom';
-import { ImageSlider } from '../image-slider/image-slider';
 import { changeItemCount } from '../../store/items/actions';
 import { Item } from '../../types/item';
 import { Button } from '../common/button/button';
@@ -29,15 +28,11 @@ export const CardCatalog: FC<Props> = ({ item }) => {
     countSelected,
   } = item;
 
-  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
-
   const dispatch = useDispatch();
 
   const history = useHistory();
 
-  const clickOnImageHandler = () => {
-    setIsImageModalOpen(true);
-  };
+  const [activeImage, setActiveImage] = useState(images[0] || '');
 
   const clickOnBasketButtonHandler = () => {
     if (item.countSelected > 0) {
@@ -65,18 +60,15 @@ export const CardCatalog: FC<Props> = ({ item }) => {
 
   return (
     <div className={styles.wrapper}>
-      <Modal
-        isOpen={isImageModalOpen}
-        onRequestClose={() => setIsImageModalOpen(false)}
-        style={{ overlay: { zIndex: 3 } }}
-      >
-        <ImageSlider images={images} imageFitCover={false} />
-      </Modal>
-
       {countAvailable < 0 && <div className={styles.soldOut}>Izpārdots</div>}
-
       <div className={styles.imgWrapper}>
-        <img src={images[0]} alt={name} className={styles.image} onClick={clickOnImageHandler} />
+        <img
+          src={activeImage}
+          alt={name}
+          className={styles.image}
+          onMouseEnter={() => setActiveImage(images[1] || activeImage)}
+          onMouseLeave={() => setActiveImage(images[0] || activeImage)}
+        />
       </div>
       <div className={styles.contentWrapper}>
         <h3 onClick={goToItemPage} className={styles.title}>
@@ -88,7 +80,7 @@ export const CardCatalog: FC<Props> = ({ item }) => {
           <span className={styles.discountPrice}>{disCountPrice}</span>
         </div>
         <div className={styles.btnWrapper}>
-          <Button onClick={clickOnBasketButtonHandler} color='primary'>
+          <Button onClick={clickOnBasketButtonHandler} color="primary">
             {countSelected > 0 ? 'Izņemt no groza' : 'Pievienot grozam'}
           </Button>
         </div>

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { IoMdCart } from 'react-icons/io';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { Nav } from '../nav/nav';
 import './header.scss';
@@ -8,13 +8,9 @@ import { RootState } from '../../store';
 import { Button } from '../common/button/button';
 
 export const Header: FC = () => {
-  const activeUserName = useSelector((state: RootState) => {
-    return state.user.name.substring(0, 20);
-  });
+  const activeUserName = useSelector((state: RootState) => state.user.name.substring(0, 20));
 
-  const activeUserStatus = useSelector((state: RootState) => {
-    return state.user.status;
-  });
+  const activeUserStatus = useSelector((state: RootState) => state.user.status);
 
   const itemCountInCart = useSelector((state: RootState) => {
     let count = 0;
@@ -26,17 +22,15 @@ export const Header: FC = () => {
 
   const history = useHistory();
 
-  const dispatch = useDispatch();
-
   return (
     <header>
       <div className="container">
         <div className="row middle-xs">
           <div className="col-xs-12 col-md-2 center-xs">
-            <img 
+            <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhfnTblmmE1jwRst04xRHrp78vFiCb5WE_vw&usqp=CAU"
               alt=""
-              width='100'
+              width="100"
             />
           </div>
           <div className="col-md-7 col-xs-12 center-xs">
@@ -53,6 +47,8 @@ export const Header: FC = () => {
                   <Button size="small" color="secondary" onClick={() => history.push('/register')}>
                     Sign Up
                   </Button>
+                </div>
+                <div>
                   <Button size="small" color="secondary" onClick={() => history.push('/log-in')}>
                     Log In
                   </Button>

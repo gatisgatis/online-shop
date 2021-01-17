@@ -8,9 +8,11 @@ import Cart from './pages/cart';
 import Catalog from './pages/catalog';
 import ItemPage from './pages/item';
 import UserPage from './pages/user';
-import { Header } from './components/header/header';
 import Register from './pages/register';
 import LogIn from './pages/log-in';
+import ImageSlider from './components/image-slider/image-slider';
+import { SLIDES_IMAGES, FANCY_TITLES, FANCY_TEXTS } from './data/slides_images';
+import { Header } from './components/header/header';
 
 const App: FC = () => {
   return (
@@ -33,6 +35,14 @@ const App: FC = () => {
           <Register />
         </Route>
         <Route path="/catalog">
+          <div style={{ height: '40vh', position: 'relative' }}>
+            <ImageSlider
+              images={SLIDES_IMAGES}
+              textBigger={FANCY_TITLES}
+              textSmaller={FANCY_TEXTS}
+              showText={true}
+            />
+          </div>
           <Catalog />
         </Route>
         <Route path="/cart">

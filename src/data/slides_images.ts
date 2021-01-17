@@ -6,8 +6,13 @@ export const SLIDES_IMAGES: string[] = [
 ];
 
 export const FANCY_TITLES: string[] = [
-  'TE IR KAUT KAS LABS',
-  'ELINA NEKO NESAPROT',
-  'KO TAGAD DARIT TE',
-  'KAPEC TE IR TAS',
+  'THIS IS AWESOME',
+  'BREAKING NEWS',
+  'LOOK HERE',
+  'ENJOY LIFE',
+];
+
+export const FANCY_TEXTS: string[] = [
+  'Just look around',
+  'It has happened',
 ];

@@ -21,6 +21,8 @@ export const allItems: Item[] = [
     category: 'Skapis',
     likes: 6,
     addedDate: 421512,
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaerat accusantium vitae nihil excepturi a ipsa',
   },
   {
     id: uuid(),
@@ -34,10 +36,15 @@ export const allItems: Item[] = [
       volume: 50,
     },
     discount: 20,
-    images: ['https://www.24a.lv/img/Products/full_8e0e4f9eaa5f4bc4f005292c058e2bbe.jpg'],
+    images: [
+      'https://www.24a.lv/img/Products/full_8e0e4f9eaa5f4bc4f005292c058e2bbe.jpg',
+      'https://wallpaperaccess.com/full/721192.jpg',
+    ],
     category: 'Krēsls',
     likes: 2,
     addedDate: 42151242,
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaer',
   },
   {
     id: uuid(),
@@ -55,11 +62,16 @@ export const allItems: Item[] = [
       'https://www.jysk.lv/media/catalog/product/cache/image/beff4985b56e3afdbeabfc89641a4582/3/2/322ad002a0b95dbe0a8ac9123b340a358663ef12___1_718-196-1040.jpg',
       'https://naktsmebeles.lv/wp-content/uploads/2019/08/harry_kresls_sanskats.jpg',
       'https://www.24a.lv/img/Products/full_8e0e4f9eaa5f4bc4f005292c058e2bbe.jpg',
+      'https://www.jysk.lv/media/catalog/product/cache/image/beff4985b56e3afdbeabfc89641a4582/3/2/322ad002a0b95dbe0a8ac9123b340a358663ef12___1_718-196-1040.jpg',
+      'https://naktsmebeles.lv/wp-content/uploads/2019/08/harry_kresls_sanskats.jpg',
+      'https://www.24a.lv/img/Products/full_8e0e4f9eaa5f4bc4f005292c058e2bbe.jpg',
       'https://www.jysk.lv/media/catalog/product/cache/image/beff4985b56e3afdbeabfc89641a4582/2/9/29816b70679771c711bc6f5103ed395b31b6d6bd___1_708-186-1020.jpg',
     ],
     category: 'Krēsls',
     likes: 42,
     addedDate: 4211512,
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaerat accusantium vitae nihil excepturi a ipsam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaerat accusantium vitae nihil excepturi a ipsam?',
   },
   {
     id: uuid(),
@@ -73,10 +85,14 @@ export const allItems: Item[] = [
       volume: 50,
     },
     discount: 40,
-    images: ['https://images.samsung.com/is/image/samsung/africa-en-fhdtv-n5300-global-ua49n5300arxxa-frontblack-153239974?$720_576_PNG$'],
+    images: [
+      'https://images.samsung.com/is/image/samsung/africa-en-fhdtv-n5300-global-ua49n5300arxxa-frontblack-153239974?$720_576_PNG$',
+    ],
     category: 'TV',
     likes: 11,
     addedDate: 5421512,
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaerat accusantium vitae nihil excepturi a ipsam',
   },
   {
     id: uuid(),
@@ -94,5 +110,7 @@ export const allItems: Item[] = [
     category: 'Sūds',
     likes: 0,
     addedDate: 7421512,
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaerat accusantium vitae nihil excepturi a ipsam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaerat accusantium vitae nihil excepturi a ipsam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaerat accusantium vitae nihil excepturi a ipsam?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo debitis recusandae ab sequi unde vitae doloremque dolore iure. Amet obcaecati odio molestias id quaerat accusantium vitae nihil excepturi a ipsam?',
   },
 ];

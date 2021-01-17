@@ -2,12 +2,10 @@
 import React, { FC, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { CardCatalog } from '../components/card-catalog/card-catalog';
-import { ImageSlider } from '../components/image-slider/image-slider';
 import { DropdownFilter } from '../components/dropdown-filter/dropdown-filter';
 import { CheckBoxes } from '../components/check-boxes/check-boxes';
 import { Search } from '../components/search/search';
 import { RootState } from '../store';
-import { FANCY_TITLES, SLIDES_IMAGES } from '../data/slides_images';
 import {
   sorts,
   CHEAPEST,
@@ -108,16 +106,6 @@ const Catalog: FC = () => {
 
   return (
     <>
-      <section className="margin-bottom--20">
-        <div style={{ paddingTop: '30%', position: 'relative' }}>
-          <ImageSlider
-            images={SLIDES_IMAGES}
-            textTitles={FANCY_TITLES}
-            textTexts={FANCY_TITLES}
-            showText={true}
-          />
-        </div>
-      </section>
       <section>
         <div className="container margin-bottom--20">
           <div className="row">

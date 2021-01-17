@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
-import { useDispatch } from 'react-redux';
 import useTextInput from '../../hooks/useTextInput';
-import { userLogIn } from '../../store/user/actions';
 import { Button } from '../common/button/button';
 import Input from '../common/input/input';
 
@@ -9,13 +7,10 @@ export const LogInForm: FC = () => {
   const [username, bindUsername, resetUsername] = useTextInput('');
   const [password, bindPassword, resetPassword] = useTextInput('');
 
-  const dispatch = useDispatch();
-
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // aizsūtam datus uz serveri un sagaidām atbildi
     // šajā gadījumā paņemam no localStorage visus userus, atrodam match un ja ir, tad logIn
-    
   };
 
   return (
@@ -32,6 +27,17 @@ export const LogInForm: FC = () => {
               <br />
               <br />
               <Button>Ielogoties</Button>
+              <Button
+                onClick={() => {
+                  resetPassword();
+                  resetUsername();
+                }}
+              >
+                Clear
+              </Button>
+              <h6>
+                {username}{password}
+              </h6>
             </form>
           </div>
         </div>

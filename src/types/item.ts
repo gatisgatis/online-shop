@@ -14,5 +14,6 @@ export interface Item {
   category: string;
   likes: number;
   addedDate: number;
+  description: string;
 }
 

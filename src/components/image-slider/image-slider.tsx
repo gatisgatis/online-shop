@@ -1,16 +1,14 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { FC, useState, useRef, useEffect } from 'react';
-import { v4 } from 'uuid';
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from 'react-icons/bs';
-import { Slides } from './helpers/slides';
-import Slide from './helpers/slide';
+import Slides from './helpers/slides';
 import style from './image-slider.module.scss';
 
 interface Props {
   images: string[];
-  textTitles?: string[];
-  textTexts?: string[];
+  textBigger?: string[];
+  textSmaller?: string[];
   showText?: boolean;
   textColor?: 'dark' | 'light';
   showArrows?: boolean;
@@ -21,11 +19,11 @@ interface Props {
   imageFitCover?: boolean;
 }
 
-export const ImageSlider: FC<Props> = ({
+const ImageSlider: FC<Props> = ({
   images,
   textColor = 'light',
-  textTitles = [...images],
-  textTexts = [...images],
+  textBigger = [...images],
+  textSmaller = [...images],
   showText = false,
   showArrows = true,
   showDots = true,
@@ -50,7 +48,7 @@ export const ImageSlider: FC<Props> = ({
     return () => {
       clearTimeout(timeOut.current!);
     };
-  }, [activeSlideInfo.index, autoPlay, timeBetweenSlides]);
+  }, [activeSlideInfo.index]);
 
   const clickOnRightArrowHandler = () => {
     if (activeSlideInfo.index >= images.length - 1) {
@@ -91,7 +89,6 @@ export const ImageSlider: FC<Props> = ({
       translate: (index * 100) / images.length,
     });
   };
-
   return (
     <div className={style.wrapper}>
       {showArrows && (
@@ -106,7 +103,7 @@ export const ImageSlider: FC<Props> = ({
             return (
               <span
                 onClick={() => clickOnDotHandler(index)}
-                key={v4()}
+                key={image}
                 className={style.dot}
                 style={{ backgroundColor: activeSlideInfo.index === index ? 'black' : 'white' }}
               />
@@ -118,22 +115,16 @@ export const ImageSlider: FC<Props> = ({
         translate={activeSlideInfo.translate}
         animationTime={animationTime}
         width={images.length * 100}
-      >
-        {images.map((slide, i) => {
-          return (
-            <Slide
-              key={v4()}
-              image={slide}
-              showText={showText}
-              width={100 / images.length}
-              textColor={textColor}
-              textText={textTexts[i]}
-              textTitle={textTitles[i]}
-              imageFitCover={imageFitCover}
-            />
-          );
-        })}
-      </Slides>
+        images={images}
+        showText={showText}
+        textColor={textColor}
+        textSmaller={textSmaller}
+        textBigger={textBigger}
+        imageFitCover={imageFitCover}
+      />
     </div>
   );
 };
+
+// Could use memo, if this component rerenders too often based on state changes in it's parrent
+export default ImageSlider;
